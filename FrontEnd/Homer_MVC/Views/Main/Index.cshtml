@@ -1,0 +1,139 @@
+﻿@model IEnumerable<Homer_MVC.Models.Trash>
+@{
+    ViewBag.Title = "Index";
+}
+
+ 
+
+<div class="content animate-panel">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="hpanel">
+                <div class="panel-body text-center h-200">
+                    <i class="pe-7s-trash fa-4x"></i>
+
+                    <h1 class="m-xs">25%</h1>
+
+                    <h3 class="font-extra-bold no-margins text-success">
+                        Filled Trashes
+                    </h3>
+                    <small>send drivers</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="hpanel">
+                <div class="panel-body text-center h-200">
+                    <i class="pe-7s-angle-down-circle fa-4x"></i>
+
+                    <h1 class="m-xs">330</h1>
+
+                    <h3 class="font-extra-bold no-margins text-success">
+                       Cars 
+                    </h3>
+                    <small>ready</small>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="hpanel">
+                <div class="panel-body text-center h-200">
+                    <i class="pe-7s-user fa-4x"></i>
+
+                    <h1 class="m-xs">206,90</h1>
+
+                    <h3 class="font-extra-bold no-margins text-success">
+                        Workers
+                    </h3>
+                    <small>ready</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+   
+    <div class="row">
+        <div id="map" class="panel-body">
+            @section scripts{
+
+                <style>
+                    /* Always set the map height explicitly to define the size of the div
+                    * element that contains the map. */
+                    #map {
+                        height: 400px;
+                    }
+                    </style>
+            
+                <script>
+                    var map;
+                    function initMap() {
+
+                   
+                        var myLatLng = { lat: 21.412294, lng: 39.890611 };
+                        var myLatLng2 = { lat: 21.412847, lng: 39.889893 };
+                        var myLatLng3 = { lat: 21.414294, lng: 39.893611 };
+                        var myLatLng4 = { lat: 21.417847, lng: 39.886893 };
+
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 15,
+                            center: myLatLng
+                        });
+
+                        var marker = new google.maps.Marker({
+                            position: myLatLng,
+                            icon: {
+                                path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                                strokeColor: "red",
+                                scale: 3
+                            },
+                            map: map,
+                            title: 'Trash 100%'
+                        });
+                       
+                        var marker2 = new google.maps.Marker({
+                            position: myLatLng2,
+                            map: map,
+                            icon: {
+                                path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                                strokeColor: "green",
+                                scale: 3
+                            },
+                            title: 'Trash 20%'
+                        });
+
+                        var marker3 = new google.maps.Marker({
+                            position: myLatLng3,
+                            map: map,
+                            icon: {
+                                path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                                strokeColor: "green",
+                                scale: 3
+                            },
+                            title: 'Trash 20%'
+                        });
+
+                        var marker4 = new google.maps.Marker({
+                            position: myLatLng4,
+                            map: map,
+                            icon: {
+                                path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                                strokeColor: "orange",
+                                scale: 3
+                            },
+                            title: 'Trash 60%'
+                        });
+                    }
+                    
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFYFdbDSVgurNBUU9H2WpqagVqmpavErQ&callback=initMap"
+                        async defer></script>
+
+            }
+
+        </div>
+    </div>
+</div>
+
