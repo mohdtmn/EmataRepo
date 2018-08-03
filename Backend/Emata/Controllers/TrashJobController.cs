@@ -15,34 +15,21 @@ namespace Emata.Controllers
         EmataContext myDb = new EmataContext();
 
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IEnumerable<string> Get(int DriverId)
         {
-
-            int max = myDb.Trashes.Count();
-            Random random = (new Random());
-            Trash tr =  myDb.Trashes.Find((int) (random.NextDouble() * (max-1)) + 1);
+            Trash tr = getTrashForDriver(DriverId);
             return new string[] { "" + tr.Id, "" + tr.Xloc, "" + tr.Yloc };
         }
 
-        // GET api/<controller>/5
-        //public string Get()
-        //{
-        //    return " ";
-        //}
-
-        // POST api/<controller>
-        public void Post([FromBody]string value)
+        private Trash getTrashForDriver(int DriverId)
         {
+            //Machine learning takes place here
+            //Inputs = Driver Location , Trash Cans Locations, Trash Cans Fill Level, Trash Cans Expected Fill Level Based on History
+            //Output = Trash can location for the driver to attend
+            int max = myDb.Trashes.Count();
+            Random random = (new Random());
+            return myDb.Trashes.Find((int)(random.NextDouble() * (max - 1)) + 1);
         }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
+        
     }
 }

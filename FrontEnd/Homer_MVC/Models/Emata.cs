@@ -8,10 +8,11 @@ namespace Homer_MVC.Models
     public partial class Emata : DbContext
     {
         public Emata()
-            : base("name=EmataContext")
+            : base("name=Emata")
         {
         }
 
+        public virtual DbSet<HeatPoint> HeatPoints { get; set; }
         public virtual DbSet<Trash> Trashes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

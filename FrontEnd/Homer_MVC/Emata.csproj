@@ -131,12 +131,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Controllers\CarsController.cs" />
+    <Compile Include="Controllers\HeatController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\HMTLHelperExtensions.cs" />
     <Compile Include="Models\Emata.cs" />
+    <Compile Include="Models\HeatPoint.cs" />
     <Compile Include="Models\Trash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -490,6 +493,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\ho.pubxml" />
+    <Content Include="Views\Cars\Index.cshtml" />
+    <Content Include="Views\Heat\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

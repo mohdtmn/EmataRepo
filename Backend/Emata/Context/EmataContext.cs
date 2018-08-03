@@ -10,5 +10,6 @@ namespace Emata.Context
     public class EmataContext : DbContext
     {
         public DbSet<Trash> Trashes { get; set; }
+        public DbSet<HeatPoint> HeatPoints { get; set; }
     }
 }

@@ -189,12 +189,14 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Context\EmataContext.cs" />
+    <Compile Include="Controllers\CleanReportController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TrashJobController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\HeatPoint.cs" />
     <Compile Include="Models\Trash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
